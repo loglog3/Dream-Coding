@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        background-color: black;
+        flex-direction: column;
+        /* overflow: hidden; */
+      }
+      .box {
+        /* display: flex; */
+        width: 100px;
+        height: 100px;
+        background-color: navajowhite;
+        margin: 30px;
+      }
+      .color {
+        background-color: powderblue;
+      }
+
+      button {
+        width: 150px;
+      }
+
+      .buttonContainer {
+        position: fixed;
+        right: 5px;
+        top: 5px;
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="buttonContainer">
+      <button onclick="scroll100px()">scroll by Y</button>
+      <button onclick="scrollto100px()">scroll to</button>
+      <button onclick="scrolltoSpecial()">scroll into Special class</button>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box color"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      let color = document.querySelector(".color");
+
+      const onclickHandler = () => {
+        // console.log(event);
+        // console.log(this);
+        // console.log(event.target);
+        console.log(color.getBoundingClientRect());
+        console.log(
+          `${color.getBoundingClientRect().left} &
+            ${color.getBoundingClientRect().top}`
+        );
+        // console.log()
+        console.log(`client : ${event.clientX}, ${event.clientY}`);
+        console.log(`page: ${event.pageX}, ${event.pageY}`);
+      };
+
+      color.addEventListener("click", onclickHandler);
+
+      const scroll100px = () => {
+        console.log("scroll100px");
+        // window.scrollBy(0, 100, behav);
+        window.scrollBy({
+          top: 100,
+          left: 0,
+          behavior: "smooth",
+        });
+      };
+
+      const scrollto100px = () => {
+        console.log("scrollTo100px");
+        window.scrollTo(0, 100);
+      };
+
+      let special = document.querySelector(".color");
+      const scrolltoSpecial = () => {
+        special.scrollIntoView();
+      };
+    </script>
+  </body>
+</html>

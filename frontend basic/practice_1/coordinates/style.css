@@ -1,0 +1,33 @@
+body {
+  background-color: black;
+}
+
+.vertical {
+  position: fixed;
+  left: 100px;
+  width: 1px;
+  height: 100%;
+}
+
+.horizontal {
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  height: 1px;
+}
+
+.target {
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+
+.line {
+  background-color: white;
+}
+
+.tag {
+  position: fixed;
+  font-size: 16px;
+  color: white;
+  transform: translate(50px, 0px);
+}

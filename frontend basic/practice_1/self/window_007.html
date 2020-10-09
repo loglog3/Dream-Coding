@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      document.addEventListener("mousemove", logKey);
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.style.width = window.innerWidth;
+      canvas.style.height = window.innerHeight;
+
+      function logKey(e) {
+        X = e.clientX;
+        Y = e.clientY;
+
+        ctx.beginPath();
+        ctx.moveTo(0, Y);
+        ctx.lineTo(window.innerWidth, Y);
+        ctx.stroke();
+
+        screenLog = `
+         Screen X/Y: ${e.screenX}, ${e.screenY}
+         Client X/Y: ${e.clientX}, ${e.clientY}`;
+        console.log(screenLog);
+      }
+    </script>
+  </body>
+</html>

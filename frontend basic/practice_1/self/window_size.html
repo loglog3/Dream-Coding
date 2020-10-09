@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box" style="width: 500px; height: 500px">Hello</div>
+
+    <script>
+      var box = document.querySelector(".box");
+
+      const printSize = () => {
+        box.innerHTML = `
+        screen1.innerHTML = ${window.screen.width}, ${window.screen.height};
+        inner1.innerHTML = ${window.outerWidth}, ${window.outerHeight};
+        outer1.innerHTML = ${window.innerWidth}, ${window.innerHeight};
+        ${console.log("resize")}
+        `;
+      };
+
+      window.addEventListener("resize", printSize);
+
+      printSize();
+    </script>
+  </body>
+</html>

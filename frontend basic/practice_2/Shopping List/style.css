@@ -1,0 +1,32 @@
+body {
+  box-sizing: border-box;
+  background-color: peru;
+  text-align: center;
+  border: pink 5px solid;
+  padding: 5px;
+  height: 400px;
+}
+
+ul {
+  padding-left: 20;
+  overflow-y: scroll;
+  height: 200px;
+}
+
+.bookList {
+  position: relative;
+  right: 15px;
+  margin: 5px;
+}
+
+.delete {
+  position: absolute;
+  right: 0px;
+  background-color: pink;
+}
+
+input {
+  background-color: pink;
+  width: 80%;
+  margin: 20px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+        background: black;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+      }
+
+      img {
+        width: 100px;
+        margin: auto;
+      }
+
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button>let's find Rabbit</button>
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/rabbit.png" alt="rabbit" class="rabbit" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <img src="img/carrot.png" alt="carrot" class="carrot" />
+    <script>
+      let button = document.querySelector("button");
+      let rabbit = document.querySelector(".rabbit");
+
+      button.addEventListener("click", () => {
+        rabbit.scrollIntoView({ behavior: "smooth", block: "center" }); // 마법의 함수 scrollIntoView
+      });
+    </script>
+  </body>
+</html>
